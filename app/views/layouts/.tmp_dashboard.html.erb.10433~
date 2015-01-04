@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Untitled Document</title>
+	</head>
+	<body>
+		<div id="wrapper">
+			<%= render partial: 'layouts/header' %> 
+			
+			<div id="acties">
+				<h3> Acties</h3>	
+				<!-- <%= link_to "Bekijk Overzicht", '', :class => 'actie' %> -->
+				<h4> 1. Bekijk Overzichten</h4>
+				<%= link_to "Bekijk Commissies", '#COver', :class => 'actie' %>
+				<%= link_to "Bekijk Leden", '#LOver', :class => 'actie' %> 
+			</div>
+			
+					
+		
+		
+			<div id="overzicht">
+				<div id="COver">
+					<h3> Commissie Overzicht</h3>
+					<table>
+					  <thead>
+					    <tr>
+					      <th>Name</th>
+					      <th>Year</th>
+						  <th colspan="3"> Acties</th>
+					    </tr>
+					  </thead>
+					
+					  <tbody>
+					    <% $groups.each do |group| %>
+					      <tr>
+					        <td><%= group.groupname %></td>
+					        <td><%= group.year %></td>
+							<td><%= link_to 'Show', group %></td>
+					        <td><%= link_to 'Edit', edit_group_path(group) %></td>
+					        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+					      </tr>
+					    <% end %>
+					  </tbody>
+					</table>
+				</div> <!-- sluit div COver -->	
+				
+			</div> <!-- sluit div overzicht -->
+			
+				
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+	</body>
+</html>

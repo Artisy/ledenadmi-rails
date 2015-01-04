@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @group.groupname %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @group.year %>
+</p>
+
+<p>
+	<strong> Members: </strong>
+	<%= @group.members.name %>
+</p>	
+
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>
+<br/>
+
+
