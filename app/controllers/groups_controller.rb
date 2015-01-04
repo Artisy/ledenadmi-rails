@@ -2,15 +2,18 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 
   def dashboard 
+    $groups = Group.all
+    @groups = Group.all
+    $groups = Group.includes(:members).all
+    $members = Member.all 
     render 'layouts/dashboard.html.erb'
-    
-    
+   
   end
   
   
   def index
     
-    $groups = Group.includes($members).all
+    $groups = Group.includes(:members).all
     $groups = Group.all
     @groups = Group.all
     
